@@ -4,8 +4,10 @@
 ## 🌟 Resumen
 
 Este proyecto fue realizado para el desafío de ML que requería crear una mini-app similar a sitio. Intente hacer el código lo más simple y entendible posible, solo utilice librerías de terceros muy conocidas.
+
 Me base en la arquitectura de proyecto `MERN` (pero sin mongo) y separe el servidor y la web en dos carpetas.
-Dentro de la carpeta `back-end` se encuentran los archivos que consultar a la API de ML y retornan la información necesaria según especiaciones. En la carpeta `front-end` se encuentras los componentes que le dan vida al sitio web.
+
+Dentro de la carpeta `back-end` se encuentran los archivos que consultan a la API de ML y retornan la información necesaria según especiaciones. En la carpeta `front-end` se encuentras los componentes que le dan vida al sitio web.
 
 El principal stack tecnológico elegido fue (más adelante se hará hincapié en las demás tecnologías):
 
@@ -34,6 +36,8 @@ npm start
 ```
 
 *Intente siempre ejecutar el back-end primero*
+
+*Necesitas tener instalado node.js*
 
 *La aplicación corre sobre*
 <a href="http://localhost:3000">http://localhost:3000</a>
@@ -90,7 +94,7 @@ Para el renderizado al utilizar react-routes la aplicación se desarrolló de ma
 
 ## Escalabilidad
 En cuanto al back-end las funciones de desarrollaron de la manera más simple que pude, dividí las funciones de mapeo de datos en un archivo llamado ‘utils.js’ por lo cual si se agregara nueva información debería solo modificarse dicho archivo.
-Para el front-end se utilizó el modelo de contenedor-contenido para que a futuro si se requiere un cambio sea de lógica de o visualización se modifique solo lo correspondiente. Todos los componentes están modulados y se intentó utilizar el uso de arrows function y métodos simples de entender.
+Para el front-end se utilizó el modelo de contenedor-contenido para que a futuro si se requiere un cambio sea de lógica de o visualización se modifique solo lo correspondiente. Todos los componentes están modulados y se intentó utilizar el uso de arrows function y métodos simples de entender (Todo bajo ES6).
 
 ## Testing
 Para el QA no hice a tiempo para generar las pruebas con la testing library de react pero un aspecto a mejorar es incluir `JEST` al proyecto y realizar dichas pruebas, de todos modos el proyecto está configurada para ejecutar las mismas.
@@ -176,3 +180,6 @@ Opte por generar __casos de prueba__ y verificar que los mismos se cumplieran:
 *  __ACCIÓN:__ INGRESAR EN LA URL "http://localhost:3000/items/" CON UN ID INEXISTENTE
 * __ESPERADO:__ VISUALIZAR COMPONENTE DE "NO RESULTADOS"
 
+### Licencia
+
+__MIT__
