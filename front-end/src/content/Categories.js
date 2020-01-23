@@ -7,7 +7,7 @@ export default class Categories extends Component {
 			<li
 				className="badgets-item color-0 text-capitalize"
 				key={item.toString()} >
-				{item}
+				<a href={`/items?search=${item}`}>{item}</a>
 			</li>
 		);
 	}

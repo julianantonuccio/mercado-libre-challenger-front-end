@@ -72,14 +72,18 @@ A mi parecer el manejo de estados que requería esta app no era lo suficientemen
 ## SEO
 Para mejorar el SEO utilice “react-helmet” con el cual actualizo el title de la página cada vez que se realiza una búsqueda, además se actualizar los meta tag con la información de la búsqueda actual.
 También se organizó todo el contenido del sitio semánticamente respetando la jerarquía de los elementos en HTML 5.
+
 ##  Usabilidad
 Se agregaron componentes con textos de ayuda para realizar una búsqueda o en caso de que no existieran resultados se informe del mismo. En cuanto a los ítems resultantes de una búsqueda se agregó que todo el ítem sea un link lo cual facilita el acceso al mismo.
 También se crearon pantalla de carga de datos (loadings) al estilo de Facebook para tranquilizar al usuario.
+
 __Responsive__
 Se pensó el framework de css para que el mismo se ajuste al contenido, lo cual se presenta amigable en todas las resoluciones y ajustes. Para esto la mayoría está basado en `Flex`.
 Para finalizar se respetó el diseño que se solicitaba de la app.
 
- ## Performance
+__Como extra se agrego la navegación por categorías.__
+
+## Performance
 Al ser asincrónico y ya que la API responde de manera inmediata el tiempo de carga de los datos tiene un promedio de 0.3 segundos.
 Para el renderizado al utilizar react-routes la aplicación se desarrolló de manera `SPA (Single Page Application)` por lo cual no existe post-back y los tiempo de carga son mínimos.
 
@@ -166,4 +170,8 @@ Opte por generar __casos de prueba__ y verificar que los mismos se cumplieran:
 19-
 *  __ACCIÓN:__ CAMBIAR EL TAMAÑO DEL NAVEGADOR
 * __ESPERADO:__ QUE EL CONTENIDO SE AJUSTE AMIGABLEMENTE
+
+20-
+*  __ACCIÓN:__ INGRESAR EN LA URL "http://localhost:3000/items/" CON UN ID INEXISTENTE
+* __ESPERADO:__ VISUALIZAR COMPONENTE DE "NO RESULTADOS"
 
