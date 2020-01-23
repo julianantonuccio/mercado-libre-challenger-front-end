@@ -1,0 +1,32 @@
+@import "animations";
+@import "colors";
+@import "controls";
+@import "layout";
+@import "list";
+@import "margin_padding";
+@import "text";
+
+
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+html, body {
+	height: 100%;
+	font-family: 'Segoe UI';
+	block-size: auto;
+}
+
+ol li{
+  list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color:#000;
+}
+
+

@@ -1,0 +1,53 @@
+$p-size: 1, 2;
+@each $size in $p-size {
+    .pb-#{$size} {
+        padding-bottom: $size + rem;
+    }
+    .pt-#{$size} {
+        padding-top: $size + rem;
+    }
+    .pl-#{$size} {
+        padding-left: $size + rem;
+    }
+    .pr-#{$size} {
+        padding-right: $size + rem;
+    }
+    .p-#{$size} {
+        padding: $size + rem;
+    }
+
+    .mb-#{$size} {
+        margin-bottom: $size + rem;
+    }
+    .mt-#{$size} {
+        margin-top: $size + rem;
+    }
+    .ml-#{$size} {
+        margin-left: $size + rem;
+    }
+    .mr-#{$size} {
+        margin-right: $size + rem;
+    }
+    .m-#{$size} {
+        margin: $size + rem;
+    }
+}
+
+@for $i from 1 through 5 {
+    .pb-min-#{$i} {
+        padding-bottom: $i/10 + rem;
+    }
+    .pt-min-#{$i} {
+        padding-top: $i/10 + rem;
+    }
+    .pl-min-#{$i} {
+        padding-left: $i/10 + rem;
+    }
+    .pr-min-#{$i} {
+        padding-right: $i/10 + rem;
+    }
+    .p-min-#{$i} {
+        padding: $i/10 + rem;
+    }
+}
+   

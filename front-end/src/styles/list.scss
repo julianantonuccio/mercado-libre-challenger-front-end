@@ -1,0 +1,47 @@
+.list{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.list-container > li:last-child:after{
+    height: 0px;
+}
+
+.list-container > li:after{
+	position: absolute;
+    width: 78%;
+    height: 1px;
+	background: #eeeeee;
+	content:'';
+	left: 11%;
+}
+
+.list-content{
+	width: calc(100% - 212px);
+}
+
+.list-item-rigth {
+	position: absolute;
+    right: 14%;
+    font-size: 12px;
+}
+
+
+@media (max-width: 550px) {
+
+	.list-content{
+	    width: 100% !important;
+	    padding-left: 1rem;
+	    margin-bottom: 1rem;
+	}
+
+	.list-item-rigth{
+		right: 2rem;
+	}
+
+	.list{
+		border-bottom: 2rem solid #eee;
+	}
+
+}

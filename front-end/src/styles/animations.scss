@@ -1,0 +1,43 @@
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+}
+
+.animate-box-full{
+	width: 90%;
+	height: 20px;
+}
+
+.animate-box-middle{
+	width: 50%;
+	height: 20px;
+}
+
+.animate-box{
+	width: 20%;
+	height: 20px;
+}
+
+.animate-box-max{
+	width: 50%;
+	height: 300px;
+	margin-left: 25%;
+}

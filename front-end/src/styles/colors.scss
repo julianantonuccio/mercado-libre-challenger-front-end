@@ -1,0 +1,32 @@
+//Colores
+$header-color: #FFE600;
+$title-color:#333333;
+$subtitle-color:#666666;
+$back-color:#EEEEEE;
+$parr-color:#999999;
+$default-color:#ffffff;
+
+.bk-principal{
+	background-color: $header-color;
+}
+
+.bk-secondary{
+	background-color: $back-color;
+}
+
+.bk-default{
+	background-color: $default-color;
+}
+
+.color-0{
+	color: $subtitle-color;
+}
+
+.color-1{
+	color: $title-color;
+}
+
+.color-2{
+	color: $parr-color;
+}
+
