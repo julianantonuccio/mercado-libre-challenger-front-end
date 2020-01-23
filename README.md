@@ -4,6 +4,7 @@
 ## 🌟 Resumen
 
 Este proyecto fue realizado para el desafío de ML que requería crear una mini-app similar a sitio. Intente hacer el código lo más simple y entendible posible, solo utilice librerías de terceros muy conocidas.
+Me base en la arquitectura de proyecto `MERN` (pero sin mongo) y separe el servidor y la web en dos carpetas.
 Dentro de la carpeta `back-end` se encuentran los archivos que consultar a la API de ML y retornan la información necesaria según especiaciones. En la carpeta `front-end` se encuentras los componentes que le dan vida al sitio web.
 
 El principal stack tecnológico elegido fue (más adelante se hará hincapié en las demás tecnologías):
