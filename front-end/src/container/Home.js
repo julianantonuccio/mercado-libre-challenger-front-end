@@ -58,7 +58,7 @@ export default class Home extends Component {
             await this.setState({ searchText, usedSearch: true })
             await this.getItems(searchText);
         }
-        else{
+        else {
             this.props.history.push("/");
             this.setState({ searchText: '' });
         }
@@ -82,7 +82,7 @@ export default class Home extends Component {
     }
 
     _renderComponents() {
-        if(!this.state.searchText){
+        if (!this.state.searchText) {
             return <NoResults></NoResults>
         }
         if (this.state.isLoading) {

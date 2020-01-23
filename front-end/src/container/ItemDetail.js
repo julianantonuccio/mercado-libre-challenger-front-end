@@ -41,15 +41,15 @@ export default class itemDetail extends Component {
                     categories: dataCat
                 });
             }
-            else{
-                if(data.error){
+            else {
+                if (data.error) {
                     this.setState({
                         isLoading: false,
                         item: {}
                     });
                     throw data.error;
                 }
-                else{
+                else {
                     this.setState({
                         isLoading: false,
                         item: data
@@ -76,7 +76,7 @@ export default class itemDetail extends Component {
             if ((Object.keys(item).length === 0 && item.constructor === Object) || error) {
                 return <NoResults></NoResults>
             }
-            else{
+            else {
                 if (categories.length === 0) {
                     categories.push('Sin categoría')
                 }

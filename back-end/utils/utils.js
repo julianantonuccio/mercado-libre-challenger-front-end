@@ -44,7 +44,7 @@ const newSubItem = ({
   };
 };
 
-const handleError = (error,res) => {
+const handleError = (error, res) => {
   if (error.response) {
     res.status(error.response.status).json({ error: error.response.data.message });
   }
@@ -56,15 +56,14 @@ Number.prototype.countDecimals = function () {
 }
 
 Number.prototype.formatToPrice = function () {
-   return this.toString().replace('.',',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+  return this.toString().replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 }
 
 function padLeftDecimal(value) {
-  if(value.includes(','))
-  {
-     var sp = value.split(',');
-     while (sp[1].length < (2)) {sp[1] = "0" + sp[1];}
-     return (sp[0] + "," + sp[1]);
+  if (value.includes(',')) {
+    var sp = value.split(',');
+    while (sp[1].length < (2)) { sp[1] = "0" + sp[1]; }
+    return (sp[0] + "," + sp[1]);
   }
   return value;
 }

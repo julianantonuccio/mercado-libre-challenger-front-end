@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     res.json(newItem(result, categories));
   }
   catch (error) {
-    handleError(error,res);
+    handleError(error, res);
   }
 });
 
@@ -38,11 +38,11 @@ router.get("/:id", async (req, res) => {
     const description = await API.get(`items/${req.params.id}/description`);
     const response = newSubItem(item.data);
     response.description = description.data.plain_text.replace(/\n/ig, '</br>');
-    response.picture =  item.data.pictures[0].secure_url;
+    response.picture = item.data.pictures[0].secure_url;
     res.json(response);
   }
   catch (error) {
-    handleError(error,res);
+    handleError(error, res);
   }
 });
 
