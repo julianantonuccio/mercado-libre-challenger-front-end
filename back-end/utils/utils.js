@@ -44,7 +44,7 @@ const newSubItem = ({
   };
 };
 
-const handleError = (error) => {
+const handleError = (error,res) => {
   if (error.response) {
     res.status(error.response.status).json({ error: error.response.data.message });
   }

@@ -22,8 +22,7 @@ export default class itemDetail extends Component {
     async componentWillMount() {
         const { pathname } = this.props.location;
         const productId = pathname.replace('/items/', '');
-        if(productId)
-        {
+        if (productId) {
             await this.getItem(productId);
         }
     }
@@ -31,21 +30,40 @@ export default class itemDetail extends Component {
     async getItem(itemId) {
         this.setState({ isLoading: true });
         try {
-            const response = await fetch(`/api/items/${itemId}`);
+            const response = await fetch(`/api/items/${itemId}`)
             let data = await response.json();
-            const category = await fetch(`/api/categories/${data.category_id}`);
-            let dataCat = await category.json();
-            console.log(data);
-            console.log(dataCat);
-            this.setState({
-                isLoading: false,
-                item: data,
-                categories: dataCat
-            });
+            if (data.category_id) {
+                const category = await fetch(`/api/categories/${data.category_id}`);
+                let dataCat = await category.json();
+                this.setState({
+                    isLoading: false,
+                    item: data,
+                    categories: dataCat
+                });
+            }
+            else{
+                if(data.error){
+                    this.setState({
+                        isLoading: false,
+                        item: {}
+                    });
+                    throw data.error;
+                }
+                else{
+                    this.setState({
+                        isLoading: false,
+                        item: data
+                    });
+                }
+            }
         }
         catch (error) {
             console.log(error);
-            this.setState({ error: true })
+            this.setState({
+                error: true,
+                isLoading: false,
+                item: {}
+            })
         }
     }
 
@@ -55,12 +73,11 @@ export default class itemDetail extends Component {
             return <LoadingItem></LoadingItem>
         }
         else {
-            if (item === {} || error) {
+            if ((Object.keys(item).length === 0 && item.constructor === Object) || error) {
                 return <NoResults></NoResults>
             }
-            else {
-                if(categories.length === 0)
-                {
+            else{
+                if (categories.length === 0) {
                     categories.push('Sin categoría')
                 }
                 return (
@@ -77,7 +94,7 @@ export default class itemDetail extends Component {
         if (searchText) {
             this.props.history.push(`/items?search=${searchText}`);
         }
-        else{
+        else {
             this.props.history.push("/");
         }
     }

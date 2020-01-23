@@ -12,13 +12,12 @@ router.get("/", async (req, res) => {
     const categories = response.data.filters.find(
       filter => filter.id === "category"
     );
-    console.log(categories);
     //Logica para obtener las imagenes en buena calidad
     const result = await getItemImage(response.data.results);
     res.json(newItem(result, categories));
   }
   catch (error) {
-    handleError(error);
+    handleError(error,res);
   }
 });
 
@@ -43,7 +42,7 @@ router.get("/:id", async (req, res) => {
     res.json(response);
   }
   catch (error) {
-    handleError(error);
+    handleError(error,res);
   }
 });
 

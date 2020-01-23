@@ -13,7 +13,7 @@ router.get("/:id", async (req, res) => {
         res.json(categories);
     }
     catch (error) {
-        handleError(error);
+        handleError(error,res);
     }
 });
 

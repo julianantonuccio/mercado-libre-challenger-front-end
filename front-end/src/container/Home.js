@@ -69,7 +69,6 @@ export default class Home extends Component {
         try {
             const response = await fetch(`/api/items?q=${searchText}`);
             let data = await response.json();
-            console.log(data);
             this.setState({
                 isLoading: false,
                 items: data.items,
