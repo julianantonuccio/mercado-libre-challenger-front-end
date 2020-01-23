@@ -9,6 +9,8 @@ Me base en la arquitectura de proyecto `MERN` (pero sin mongo) y separe el servi
 
 Dentro de la carpeta `back-end` se encuentran los archivos que consultan a la API de ML y retornan la información necesaria según especiaciones. En la carpeta `front-end` se encuentras los componentes que le dan vida al sitio web.
 
+<a href="https://1drv.ms/u/s!AhZbpLgEjNX1jDLN8LUcqtaNfF4x?e=2clmS8">Imagenes de la App</a>
+
 El principal stack tecnológico elegido fue (más adelante se hará hincapié en las demás tecnologías):
 
 __Back-end__
