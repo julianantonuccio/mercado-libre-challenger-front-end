@@ -1,17 +1,17 @@
-# Mercado Libre Challenger Front-End 2020 - Julian Antonuccio
+# MILI Challenger Front-End 2020
 #### <a href='mailto:antonuccio@live.com.ar'>antonuccio@live.com.ar</a>
 
 ## 🌟 Resumen
 
-Este proyecto fue realizado para el desafío de ML que requería crear una mini-app similar a sitio. Intente hacer el código lo más simple y entendible posible, solo utilice librerías de terceros muy conocidas.
+This project was made for the ML challenge that required creating a mini-app similar to a site. Try to make the code as simple and understandable as possible, only use well-known third-party libraries.
 
-Me base en la arquitectura de proyecto `MERN` (pero sin mongo) y separe el servidor y la web en dos carpetas.
+I base myself on the `MERN` project architecture (but without mongo) and separate the server and the web into two folders.
 
-Dentro de la carpeta `back-end` se encuentran los archivos que consultan a la API de ML y retornan la información necesaria según especiaciones. En la carpeta `front-end` se encuentras los componentes que le dan vida al sitio web.
+Inside the `back-end` folder are the files that consult the ML API and return the necessary information according to specifications. In the `front-end` folder are the components that give life to the website.
 
-<a href="https://1drv.ms/u/s!AhZbpLgEjNX1jDLN8LUcqtaNfF4x?e=2clmS8" target="_blank">Imágenes de la App</a>
+<a href="https://1drv.ms/u/s!AhZbpLgEjNX1jDLN8LUcqtaNfF4x?e=2clmS8" target="_blank">App images</a>
 
-El principal stack tecnológico elegido fue (más adelante se hará hincapié en las demás tecnologías):
+The main technological stack chosen was (later on the other technologies will be emphasized):
 
 __Back-end__
   * Node.js
@@ -21,7 +21,7 @@ __front-end__
   * Sass
   * React js
 
-#### Para ejecutar el sistema descargue los archivos y corra los siguientes comandos:
+#### To run the system download the files and run the following commands:
 
 __Para back-end:__
  ```
@@ -37,16 +37,16 @@ npm install
 npm start
 ```
 
-*Intente siempre ejecutar el back-end primero*
+* Always try to run the backend first *
 
-*Necesitas tener instalado node.js*
+* You need to have node.js installed *
 
-*La aplicación corre sobre*
+* The application runs on *
 <a href="http://localhost:3000">http://localhost:3000</a>
 
 ## Back-End
 
-Para la creación de este utilice el siguiente comando:
+To create this use the following command:
 
 ```
 $ npm install express-generator –g
@@ -54,20 +54,20 @@ $ express --no-view back-end
 $ DEBUG= back-end:* npm start
 ```
 
-*Luego utilice Nodemon para el desarrollo, el mismo compila el proyecto cada vez que detecta un cambio.*
+* Then use Nodemon for development, it compiles the project every time it detects a change. *
 
-Para las llamadas a la API utilice Axios ya que las llamadas son asincrónicas y este devuelve ` Promises` con lo cual puedo orquestar las peticiones y respuestas de la API.
-Como ` Middlewares` utilice Morgan, más que nada para verificar cuando se llamaba al servidor y el tiempo de respuesta. También utilice ` Access-Control-Allow-Origin` para evitar errores entre las conexiones del back-end y el front-end.
-Configure el puerto del servidor en el 3001 pero este luego es tomado por un proxy por lo cual es imperceptible.
-### ¿Por qué async?
-Primero para evitar los callbacks, segundo por la legibilidad del código y tercero si se implementa correctamente a través del uso de promise el código funcionara como sincrónico pero con las ventajas mencionadas anteriormente.
+For API calls use Axios since the calls are asynchronous and it returns `Promises` with which I can orchestrate the API requests and responses.
+As `Middlewares` I used Morgan, mostly to check when the server was called and the response time. Also use `Access-Control-Allow-Origin` to avoid errors between back-end and front-end connections.
+Configure the server port in 3001 but this is then taken by a proxy so it is imperceptible.
+### Why async?
+First to avoid callbacks, second for the readability of the code and third if it is implemented correctly through the use of promise the code will work as synchronous but with the advantages mentioned above.
 
 ## Front-End
-La estructura del mismo se creó a través del comando `create-react-app`, luego se modificaron las carpetas y archivos a gusto personal.
-Además de React se utilizan librerías como:
-  * react-router-dom
-  * node-sass
-  * React-helmet
+Its structure was created through the `create-react-app` command, then the folders and files were modified to personal taste.
+In addition to React, libraries are used such as:
+   * react-router-dom
+   * node-sass
+   * React-helmet
 
 También se utilizó el modelo de contenedor – contenido en donde se divide la parte grafica de la lógica de los componentes.
 Para Sass lo que hice fue crear un mini-framework de css y reutilizar las clases generadas en todos los componentes
@@ -77,110 +77,110 @@ Para Sass lo que hice fue crear un mini-framework de css y reutilizar las clases
 A mi parecer el manejo de estados que requería esta app no era lo suficientemente complejo para utilizar esta modelo.
 
 ## SEO
-Para mejorar el SEO utilice “react-helmet” con el cual actualizo el title de la página cada vez que se realiza una búsqueda, además se actualizar los meta tag con la información de la búsqueda actual.
-También se organizó todo el contenido del sitio semánticamente respetando la jerarquía de los elementos en HTML 5.
+To improve SEO, use "react-helmet" with which I update the title of the page every time a search is performed, in addition to updating the meta tags with the information from the current search.
+Also all the content of the site was organized semantically respecting the hierarchy of the elements in HTML 5.
 
-##  Usabilidad
-Se agregaron componentes con textos de ayuda para realizar una búsqueda o en caso de que no existieran resultados se informe del mismo. En cuanto a los ítems resultantes de una búsqueda se agregó que todo el ítem sea un link lo cual facilita el acceso al mismo.
-También se crearon pantalla de carga de datos (loadings) al estilo de Facebook para tranquilizar al usuario.
+## Usability
+Components with help texts were added to carry out a search or in case there were no results, report it. Regarding the items resulting from a search, it was added that the entire item is a link, which facilitates access to it.
+Facebook-style loadings were also created to reassure the user.
 
 __Responsive__
-Se pensó el framework de css para que el mismo se ajuste al contenido, lo cual se presenta amigable en todas las resoluciones y ajustes. Para esto la mayoría está basado en `Flex`.
-Para finalizar se respetó el diseño que se solicitaba de la app.
+The css framework was designed so that it fits the content, which is friendly in all resolutions and settings. For this most of it is based on `Flex`.
+Finally, the design requested of the app was respected.
 
-__Como extra se agrego la navegación por categorías.__
+__As an extra, navigation by categories was added .__
 
 ## Performance
-Al ser asincrónico y ya que la API responde de manera inmediata el tiempo de carga de los datos tiene un promedio de 0.3 segundos.
-Para el renderizado al utilizar react-routes la aplicación se desarrolló de manera `SPA (Single Page Application)` por lo cual no existe post-back y los tiempo de carga son mínimos.
+Being asynchronous and since the API responds immediately, the data loading time has an average of 0.3 seconds.
+For rendering when using react-routes, the application was developed in a `SPA (Single Page Application)` way, so there is no post-back and the loading times are minimal.
 
-## Escalabilidad
-En cuanto al back-end las funciones de desarrollaron de la manera más simple que pude, dividí las funciones de mapeo de datos en un archivo llamado ‘utils.js’ por lo cual si se agregara nueva información debería solo modificarse dicho archivo.
-Para el front-end se utilizó el modelo de contenedor-contenido para que a futuro si se requiere un cambio sea de lógica de o visualización se modifique solo lo correspondiente. Todos los componentes están modulados y se intentó utilizar el uso de arrows function y métodos simples de entender (Todo bajo ES6).
+## Scalability
+Regarding the back-end, the functions were developed in the simplest way that I could, I divided the data mapping functions in a file called ‘utils.js’, so if new information were added, only said file should be modified.
+For the front-end, the container-content model was used so that in the future, if a change is required, whether it be the logic of or visualization, only the corresponding is modified. All components are modulated and an attempt was made to use the arrows function and simple to understand methods (Everything under ES6).
 
 ## Testing
-Para el QA no hice a tiempo para generar las pruebas con la testing library de react pero un aspecto a mejorar es incluir `JEST` al proyecto y realizar dichas pruebas, de todos modos el proyecto está configurada para ejecutar las mismas.
-Opte por generar __casos de prueba__ y verificar que los mismos se cumplieran:
+For the QA I did not do in time to generate the tests with the react testing library but one aspect to improve is to include `JEST` to the project and perform these tests, anyway the project is configured to execute them.
+Choose to generate __test cases__ and verify that they were met:
  
  1- 
-*  __ACCIÓN:__ INGRESAR A http://localhost:3000/
-* __ESPERADO:__  VISUALIZAR LA BARRA DE BUSQUEDA Y TEXTO DE BUSQUEDA
+*  __ACTION:__ ENTER TO http://localhost:3000/
+* __EXPECTED:__  VIEW THE SEARCH BAR AND SEARCH TEXT
 
 2-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA 
-* __ESPERADO:__  VISUALIZAR PANTALLA DE CARGA, VISUALIZAR CUATRO RESULTADOS ASOCIADOS A LA BUSQUEDA EN CUESTION, VISUALIZAR EL breadcrumb DE CATEGORIAS
+*  __ACTION:__ MAKE A SEARCH
+* __EXPECTED:__  VIEW THE LOAD SCREEN, VIEW FOUR RESULTS ASSOCIATED WITH THE SEARCH IN QUESTION, VIEW THE CATEGORY BREADCRUMB
 
 3-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA Y PRESIONAR EL LOGO DEL SITIO 
-* __ESPERADO:__  VISUALIZAR LA BARRA DE BUSQUEDA Y TEXTO DE BUSQUEDA
+*  __ACTION:__ MAKE A SEARCH AND PRESS SITE LOGO
+* __EXPECTED:__  VIEW THE SEARCH BAR AND SEARCH TEXT
 
 4- 
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA Y REALIZAR UNA BUSQUEDA NUEVAMENTE
-* __ESPERADO:__  VISUALIZAR EN LA PRIMER BUSQUEDA LOS CUATRO RESULTADOS, EN LA SEGUNDA BUSQUEDA LOS RESULTADOS DEBEN PISAR LOS 4 PRIMEROS
+*  __ACTION:__ PERFORM A SEARCH AND PERFORM A SEARCH AGAIN
+* __EXPECTED:__  DISPLAY IN THE FIRST SEARCH THE FOUR RESULTS, IN THE SECOND SEARCH THE RESULTS MUST STEP ON THE FIRST 4
 
 5-
-*  __ACCIÓN:__ VISUALIZAR RESULTADOS
-* __ESPERADO:__  VISUALIZAR REGISTROS CON IMAGEN, PRECIO, NOMBRE, ZONA Y TEXTO "Completo Único"
+*  __ACTION:__ VIEW RESULTS
+* __EXPECTED:__  VIEW RECORDS WITH IMAGE, PRICE, NAME, ZONE AND TEXT "Completo Único"
 
 6-
-*  __ACCIÓN:__ REALIZAR BUSQUEDA, COMPARAR DATOS OBTENIDOS CON LA API DE ML
-* __ESPERADO:__  DATOS IGUALES
+* __ACTION:__ PERFORM SEARCH, COMPARE DATA OBTAINED WITH ML API
+* __EXPECTED:__ SAME DATA
 
 7-
-*  __ACCIÓN:__ REALIZAR BUSQUEDA, COMPARAR DATOS OBTENIDOS CON LA API DE ML
-* __ESPERADO:__  EL ICONO DE ENVIO GRATIS SOLO DEBE MOSTRARSE CUANDO CORRESPONDA
+* __ACTION:__ PERFORM SEARCH, COMPARE DATA OBTAINED WITH ML API
+* __EXPECTED:__ FREE SHIPPING ICON MUST ONLY BE DISPLAYED WHEN APPROPRIATE
 
 8-
-*  __ACCIÓN:__ REALIZAR BUSQUEDA, REALIZAR CLIC SOBRE UN ITEM
-* __ESPERADO:__  PANTALLA DE CARGA, VISUALIZAR INFORMACION DEL ITEM Y CATEGORIAS
+* __ACTION:__ PERFORM A SEARCH, CLICK ON AN ITEM
+* __EXPECTED:__ LOADING SCREEN, VIEW ITEM INFORMATION AND CATEGORIES
 
 9-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA, BORRAR EL CONTENIDO Y BUSCAR NUEVAMENTE
-* __ESPERADO:__  TEXTO DE BUSQUEDA
+* __ACTION:__ PERFORM A SEARCH, DELETE THE CONTENT AND SEARCH AGAIN
+* __EXPECTED:__ SEARCH TEXT
 
 10-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA CON "ASDSAAAAAAAAAAAAAAAAAAAAAA"
-* __ESPERADO:__  VISUALIZAR COMPONENTE DE "NO RESULTADOS"
+* __ACTION:__ PERFORM A SEARCH WITH "ASDSAAAAAAAAAAAAAAAAAAAAAA"
+* __EXPECTED:__ DISPLAY "NO RESULTS" COMPONENT
 
 11-
-*  __ACCIÓN:__ ACCEDER DIRECTAMENTE A "http://localhost:3000/items?search=" CON UNA BUSQUEDA POR PARAMETRO
-* __ESPERADO:__  VISUALIZAR LOS RESULTADOS
+* __ACTION:__ DIRECTLY ACCESS TO "http://localhost:3000/items?search=" ADD ANY SEARCH BY PARAMETER
+* __EXPECTED:__ VIEW THE RESULTS
 
 12-
-*  __ACCIÓN:__ ACCEDER DIRECTAMENTE A "http://localhost:3000/items/" CON UN ID POR PARAMETRO
-* __ESPERADO:__  VISUALIZAR EL DETALLE DEL ITEM
+* __ACTION:__ DIRECTLY ACCESS TO "http://localhost:3000/items/" WITH AN ID PER PARAMETER
+* __EXPECTED:__ VIEW THE DETAIL OF THE ITEM
 
 13-
-*  __ACCIÓN:__ ENCONTRARSE EN LA PANTALLA DE DETALLE DE UN ITEM Y REALIZAR UNA BUSQUEDA
-* __ESPERADO:__  VISUALIZAR CUATROS RESULTADOS DE ITEMS
+* __ACTION:__ FIND YOURSELF ON THE DETAIL SCREEN OF AN ITEM AND PERFORM A SEARCH
+* __EXPECTED:__ VIEW FOUR ITEMS RESULTS
 
 14-
-*  __ACCIÓN:__ INGRESAR A LA DIRECCION "http://localhost:3000/" MAS CUALQUIER PREFIJO
-* __ESPERADO:__  INGRESAR A LA PANTALLA PRINCIPAL
+* __ACTION:__ ENTER THE ADDRESS "http://localhost:3000/" PLUS ANY PREFIXES
+* __EXPECTED:__ ENTER THE MAIN SCREEN
 
 15-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA 
-* __ESPERADO:__  VISUALIZAR EN EL TITULO DE LA PÁGINA, LAS CATEGORIAS DEL MISMO
+* __ACTION:__ PERFORM A SEARCH
+* __EXPECTED:__ VIEW IN THE TITLE OF THE PAGE, THE CATEGORIES OF THE SAME
 
 16-
-*  __ACCIÓN:__ REALIZAR UNA BUSQUEDA E INSPECCIONAR LOS META TAG DE LA PAGINA 
-* __ESPERADO:__  META TAGS CON EL CONTENIDO DE LAS CATEGORIAS
+* __ACTION:__ PERFORM A SEARCH AND INSPECT THE META TAG ON THE PAGE
+* __EXPECTED:__ META TAGS WITH THE CONTENT OF THE CATEGORIES
 
 17-
-*  __ACCIÓN:__ VISUALIZAR UN ITEM CON DECIMALES
-* __ESPERADO:__  SIEMPRE VER DOS DECIMALES, EN CASO DE TENER SOLO UNO VISUALIZAR "0" + DECIMAL (EJEMPLO 55,06)
+* __ACTION:__ VIEW AN ITEM WITH DECIMALS
+* __EXPECTED:__ ALWAYS SEE TWO DECIMALS, IN CASE YOU HAVE ONLY ONE, DISPLAY "0" + DECIMAL (EXAMPLE 55.06)
 
 18-
-*  __ACCIÓN:__ VISUALIZAR UN ITEM
-* __ESPERADO:__  EN EL PRECIO, ENCONTRAR UN PUNTO EN LAS MILESIMAS
+* __ACTION:__ VIEW AN ITEM
+* __EXPECTED:__ IN THE PRICE, FIND A POINT IN THE THOUSANDS
 
 19-
-*  __ACCIÓN:__ CAMBIAR EL TAMAÑO DEL NAVEGADOR
-* __ESPERADO:__ QUE EL CONTENIDO SE AJUSTE AMIGABLEMENTE
+* __ACTION:__ CHANGE BROWSER SIZE
+* __EXPECTED:__ THAT THE CONTENT FITS FRIENDLY
 
 20-
-*  __ACCIÓN:__ INGRESAR EN LA URL "http://localhost:3000/items/" CON UN ID INEXISTENTE
-* __ESPERADO:__ VISUALIZAR COMPONENTE DE "NO RESULTADOS"
+* __ACTION:__ ENTER IN THE URL "http://localhost:3000/items/" WITH A NON-EXISTING ID
+* __EXPECTED:__ DISPLAY "NO RESULTS" COMPONENT
 
 ### Licencia
 
