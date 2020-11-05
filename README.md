@@ -1,9 +1,9 @@
 # MILI Challenger Front-End 2020
 #### <a href='mailto:antonuccio@live.com.ar'>antonuccio@live.com.ar</a>
 
-## 🌟 Resumen
+## 🌟 Summary
 
-This project was made for the ML challenge that required creating a mini-app similar to a site. Try to make the code as simple and understandable as possible, only use well-known third-party libraries.
+This project was made for the ML challenge that required creating a mini-app similar to the site <a href='https://www.mercadolibre.com.ar/'>mercadolibre.com.ar/</a>. Try to make the code as simple and understandable as possible, only use well-known third-party libraries.
 
 I base myself on the `MERN` project architecture (but without mongo) and separate the server and the web into two folders.
 
@@ -22,16 +22,16 @@ __front-end__
   * Sass
   * React js
 
-#### To run the system download the files and run the following commands:
+#### To run the system, first download the files and run the following commands:
 
-__Para back-end:__
+__For the back-end:__
  ```
  cd back-end
 npm install
 npm start
 ```
 
-__Para front-end:__
+__For the front-end:__
 ```
 cd front-end
 npm install
@@ -55,7 +55,7 @@ $ express --no-view back-end
 $ DEBUG= back-end:* npm start
 ```
 
-* Then use Nodemon for development, it compiles the project every time it detects a change. *
+* TIP: Use Nodemon for development, it compiles the project every time it detects a change. *
 
 For API calls use Axios since the calls are asynchronous and it returns `Promises` with which I can orchestrate the API requests and responses.
 As `Middlewares` I used Morgan, mostly to check when the server was called and the response time. Also use `Access-Control-Allow-Origin` to avoid errors between back-end and front-end connections.
@@ -72,17 +72,18 @@ In addition to React, libraries are used such as:
 
 The container-content model was also used, where the graphic part of the component logic is divided.
 For Sass what I did was create a mini-css framework and reuse the generated classes in all the components
+
 * In the package.json there is a 'proxy' line that generates a bridge between the back-end and the front-end
 
 ### Why not use redux?
-In my opinion, the state management required by this app was not complex enough to use this model.
+In my opinion, the states management required by this app was not complex enough to use this model and this library are deprecated.
 
 ## SEO
 To improve SEO, use "react-helmet" with which I update the title of the page every time a search is performed, in addition to updating the meta tags with the information from the current search.
-Also all the content of the site was organized semantically respecting the hierarchy of the elements in HTML 5.
+Also all the content of the site was organized semantically respecting the hierarchy of the elements in HTML 5 and it´s responsive.
 
 ## Usability
-Components with help texts were added to carry out a search or in case there were no results, report it. Regarding the items resulting from a search, it was added that the entire item is a link, which facilitates access to it.
+Components with help texts were added to carry out a search or in case there were no results. Regarding the items resulting from a search, it was added that the entire item is a link, which facilitates access to it.
 Facebook-style loadings were also created to reassure the user.
 
 __Responsive__
@@ -97,7 +98,7 @@ For rendering when using react-routes, the application was developed in a `SPA (
 
 ## Scalability
 Regarding the back-end, the functions were developed in the simplest way that I could, I divided the data mapping functions in a file called ‘utils.js’, so if new information were added, only said file should be modified.
-For the front-end, the container-content model was used so that in the future, if a change is required, whether it be the logic of or visualization, only the corresponding is modified. All components are modulated and an attempt was made to use the arrows function and simple to understand methods (Everything under ES6).
+For the front-end, the container-content model was used so that in the future, if a change is required, whether it be the logic of or visualization, only the corresponding is modified. All components are modulated and an attempt was made to use the arrows function and simple to understand methods (Everything under > ES6).
 
 ## Testing
 For the QA I did not do in time to generate the tests with the react testing library but one aspect to improve is to include `JEST` to the project and perform these tests, anyway the project is configured to execute them.
