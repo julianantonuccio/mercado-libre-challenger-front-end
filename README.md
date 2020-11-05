@@ -69,12 +69,12 @@ In addition to React, libraries are used such as:
    * node-sass
    * React-helmet
 
-También se utilizó el modelo de contenedor – contenido en donde se divide la parte grafica de la lógica de los componentes.
-Para Sass lo que hice fue crear un mini-framework de css y reutilizar las clases generadas en todos los componentes
-* En el package.json se encuentra una línea ‘proxy’ que genera un puente entre el back-end y el front-end
+The container-content model was also used, where the graphic part of the component logic is divided.
+For Sass what I did was create a mini-css framework and reuse the generated classes in all the components
+* In the package.json there is a 'proxy' line that generates a bridge between the back-end and the front-end
 
-### ¿Por qué no use redux?
-A mi parecer el manejo de estados que requería esta app no era lo suficientemente complejo para utilizar esta modelo.
+### Why not use redux?
+In my opinion, the state management required by this app was not complex enough to use this model.
 
 ## SEO
 To improve SEO, use "react-helmet" with which I update the title of the page every time a search is performed, in addition to updating the meta tags with the information from the current search.
