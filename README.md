@@ -9,6 +9,7 @@ I base myself on the `MERN` project architecture (but without mongo) and separat
 
 Inside the `back-end` folder are the files that consult the ML API and return the necessary information according to specifications. In the `front-end` folder are the components that give life to the website.
 
+#### Look the photos !
 <a href="https://1drv.ms/u/s!AhZbpLgEjNX1jDLN8LUcqtaNfF4x?e=2clmS8" target="_blank">App images</a>
 
 The main technological stack chosen was (later on the other technologies will be emphasized):
